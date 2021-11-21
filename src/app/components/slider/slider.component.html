@@ -1,1 +1,12 @@
-<p>slider works!</p>
+<h2>{{title}}</h2>
+<div class="movie">
+  <div class="movieImages">
+    <div class="thumbnails">
+      <ngx-slick-carousel [config]="sliderConfig" class="carousel">
+        <div class="slick-item" *ngFor="let img of movies.results" ngxSlickItem>
+          <img src="https://image.tmdb.org/t/p/w200{{img?.poster_path}}" alt="{{img.title}}">
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </div>
+</div>
