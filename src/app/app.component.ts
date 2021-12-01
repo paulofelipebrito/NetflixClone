@@ -24,6 +24,8 @@ export class AppComponent implements OnInit, OnDestroy {
     autoplay: false
   };
 
+  title:string = "";
+
   @ViewChild('stickHeader') header!: ElementRef;
   headerBGUrl!: string;
 
@@ -33,7 +35,10 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subs.push(this.movie.getTrending().subscribe(data => {
       this.trending = data;
-      if(this.trending.results){this.headerBGUrl = 'https://image.tmdb.org/t/p/original' + this.trending.results[0].backdrop_path;}
+      if(this.trending.results){
+        this.headerBGUrl = 'https://image.tmdb.org/t/p/original' + this.trending.results[1].backdrop_path;
+        this.title = this.trending.results[1].title;
+      }
       else this.headerBGUrl = 'https://image.tmdb.org/t/p/original';
     }));
     this.subs.push(this.movie.getPopularMovies().subscribe(data => this.popular = data));

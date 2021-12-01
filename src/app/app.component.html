@@ -1,9 +1,9 @@
 <div class="container">
   <header>
     <!--BANNER AREA-->
-    <div class="headerBanner" [ngStyle]="{'background-image' : 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3))'}">
+    <div class="headerBanner" [ngStyle]="{'background-image' : 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('+headerBGUrl+')'}">
 
-      <!--h2>{{trending?.results[0].title}}</h2-->
+      <h2> {{title}} </h2>
       <div class="headerButtons">
         <button class="play-button">
           <mat-icon>arrow_right</mat-icon>
@@ -17,8 +17,8 @@
     </div>  <!--BANNER ENDS HERE-->
 
     <!--MAIN AREA-->
-   <div class="headerMain" id="stickyHeader" [class.sticky]="sticky" #stickHeader>
-     <div class="header__left">
+   <main id="stickyHeader" [class.sticky]="sticky" #stickHeader>
+     <div class="headerLeft">
        <a routerLink="/">
          <img src="assets/netflix.svg" alt="logo">
        </a>
@@ -26,7 +26,7 @@
          <li class="active"><a href="#">Home</a></li>
          <li><a href="#">TV Shows</a></li>
          <li><a href="#">Movies</a></li>
-         <li><a href="#">Latest</a></li>
+         <li><a href="#">New & Popular</a></li>
          <li><a href="#">My List</a></li>
        </ul>
      </div>
@@ -34,8 +34,6 @@
      <div class="headerRight">
        <ul>
          <li><a href="#"><mat-icon>search</mat-icon></a></li>
-         <li><a href="#">Children</a></li>
-         <li><a href="#"><mat-icon>card_giftcard</mat-icon></a></li>
          <li><a href="#"><mat-icon>notifications</mat-icon></a></li>
          <li>
            <img src="https://occ-0-4345-3647.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABRGTK96GBeqNw5zzYXnoa8oVjSjhuk7SuseuKTmgEKwpcCB59994UWb6wd7d1WONZOuzJwbLNpzG5Okfo4rSDLg.png?r=ee6"
@@ -43,7 +41,7 @@
          </li>
        </ul>
      </div>
-   </div>  <!--HEADER MAIN ENDS HERE-->
+    </main>  <!--HEADER MAIN ENDS HERE-->
 
   </header>
 
